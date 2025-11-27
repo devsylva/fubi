@@ -1,0 +1,2 @@
+# Placeholder for download.png
+# Replace this file with the actual favicon/download.png image

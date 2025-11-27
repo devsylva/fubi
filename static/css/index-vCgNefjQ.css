@@ -1,0 +1,765 @@
+@font-face {
+  font-family: Inter;
+  src: url(/assets/Inter-c8O0ljhh.ttf);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+}
+html,
+body {
+  overflow-x: hidden;
+  background: #ffdee723;
+}
+section,
+nav,
+footer {
+  padding: 0 100px;
+}
+h1 {
+  font-size: 5rem;
+  font-weight: 800;
+}
+h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+img {
+  height: 100%;
+}
+button {
+  padding: 15px 28px;
+  border-radius: 100px;
+  border: none;
+  background: #e62056;
+  color: #fff;
+  cursor: pointer;
+}
+.buttonAlt {
+  background: #000;
+  color: #fff;
+}
+.wireAlt {
+  display: flex;
+  gap: 10px;
+  color: #000;
+  border: 1px solid #e62056;
+  background: none;
+}
+.wireAlt .wiIcon {
+  height: 20px;
+  width: 20px;
+}
+.full {
+  width: 100%;
+}
+.logo {
+  height: 40px;
+  width: 140px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+nav .navAct {
+  display: flex;
+  gap: 20px;
+}
+.hero {
+  padding: 15vh 0 0;
+  text-align: center;
+  height: 100vh;
+  position: relative;
+}
+.hero .heroBlur {
+  top: -10vh;
+  position: absolute;
+  height: 60vh;
+  width: 100%;
+  z-index: -1;
+}
+.hero .heroBlur img {
+  height: 60vw;
+}
+.hero .heroInfo {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero .heroInfo h1 {
+  width: 800px;
+}
+.hero .heroInfo p {
+  margin: 20px 0 30px;
+  width: 500px;
+}
+.hero .sectionAction {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.gradient-text {
+  background: linear-gradient(90deg, #e62058, #a720e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.workingWitUs {
+  text-align: center;
+}
+.workingWitUs .secBoxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+.workingWitUs .secBoxes .bBox {
+  flex: 1;
+  flex-wrap: wrap;
+  height: 60px;
+  background: red;
+}
+.info {
+  margin-top: 10vh;
+}
+.info .cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10vh;
+  gap: 60px;
+}
+.info .cards .cBox {
+  width: 250px;
+}
+.info .cards .cBox .cIcon {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 10px;
+}
+.info .cards .cBox h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+.subHero {
+  margin: 20px 0 100px;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.subHero .voms {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1;
+}
+.subHero .subHeroWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.subHero .subHeroWrap h2 {
+  width: 800px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 5rem;
+}
+.subHero .subHeroWrap button {
+  margin-top: 30px;
+  width: fit-content;
+}
+.services {
+  margin-top: 30px;
+}
+.services .secTopServ {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.services .secTopServ h2 {
+  width: 500px;
+}
+.services .secCardsServ {
+  margin: 80px 50px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+.services .secCardsServ .serCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 50px;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+}
+.services .secCardsServ .serCard .iconSer {
+  height: 100px;
+  width: 100px;
+}
+.bofooter {
+  background: #000;
+}
+footer {
+  margin-top: 20vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  color: #fff;
+  background: transparent;
+  position: relative;
+}
+footer .bvon {
+  position: absolute;
+  height: 100%;
+  width: 60%;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+footer .footext {
+  font-size: 5rem;
+  width: 500px;
+}
+footer .fooLogo {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .fooLogo .fLogo {
+  height: 30px;
+  width: 100px;
+}
+footer hr {
+  margin: 20px 0;
+  border: 0.1px solid rgba(255, 255, 255, 0.247);
+}
+footer .fooLogob {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .fooLogob .socials {
+  display: flex;
+  gap: 10px;
+}
+footer .fooLogob .socials .socBox {
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.actionSce {
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  position: relative;
+}
+.actionSce .linkBox {
+  padding: 30px;
+  height: 420px;
+  width: 350px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.084);
+  margin-bottom: 10vh;
+}
+.actionSce .linkBox .iconLink {
+  margin: auto auto 30px;
+  height: 80px;
+  width: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.actionSce .linkBox .textLinks {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.actionSce .linkBox .textLinks h2 {
+  font-size: 1.6rem;
+}
+.actionSce .linkBox .linklistBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 180px;
+  overflow-y: scroll;
+  padding-bottom: 30px;
+}
+.actionSce .linkBox .linklistBox .linkSingle {
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #1515150d;
+}
+.actionSce .linkBox .linklistBox .linkSingle .cctIcon {
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.actionSce .linkBox .linklistBox .linkSingle p {
+  font-size: 1.1rem;
+}
+.actionSce .linkBox .linklistBox::-webkit-scrollbar {
+  display: none;
+}
+.actionSce .shacj {
+  height: fit-content;
+}
+.actionSce .vom {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.actionSce .vom p {
+  text-align: center;
+}
+.actionSce .actionlink {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+.eBox {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.eBox .red {
+  color: red;
+  font-size: 0.8rem;
+}
+.eBox .cbon {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.eBox .eIcon {
+  height: 20px;
+  width: 20px;
+}
+.eBox .sec {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+.textArea {
+  margin-bottom: 30px;
+}
+.textArea textarea {
+  box-sizing: border-box;
+  height: 120px;
+  width: 100%;
+  border-radius: 1px solid rgba(0, 0, 0, 0.084);
+  border-radius: 10px;
+  padding: 10px;
+  outline: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.textArea .err {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  text-align: center;
+  color: red;
+}
+.extra {
+  display: flex;
+  justify-content: space-between;
+  margin: 100px 0;
+}
+.extra .exText {
+  width: 400px;
+}
+.extra .exText p {
+  padding-top: 20px;
+}
+.extra .x {
+  display: flex;
+  gap: 40px;
+}
+.extra .x h1 {
+  color: #e62056;
+}
+.extra .x .ttop,
+.extra .x .arg {
+  font-size: 1.4rem;
+}
+.extra .x .arg {
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+.claim {
+  margin: 50px 0 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+.claim .claimText {
+  width: 600px;
+  padding-top: 30px;
+}
+.claim .claimText p {
+  padding-top: 20px;
+}
+.claim .clamBox {
+  width: 400px;
+  border-radius: 20px;
+  border: 1px solid #e62058;
+}
+.claim .clamBox .ctiop {
+  padding: 30px 40px;
+}
+.claim .clamBox .ctiop .cons {
+  font-size: 1.8rem;
+  padding-bottom: 30px;
+}
+.claim .clamBox .ctiop .biCl {
+  margin-bottom: 30px;
+}
+.claim .clamBox .ctiop .biCl h2 {
+  font-weight: 800;
+}
+.claim .clamBox .ctiop .biCl .kf,
+.claim .clamBox .ctiop .biCl .ttCLI {
+  font-size: 1.2rem;
+  opacity: 0.7;
+  font-weight: 700;
+}
+.claim .clamBox .actionCli {
+  border-top: 1px solid #e62056;
+  padding: 30px 40px;
+}
+.claim .clamBox .actionCli button {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+@media screen and (max-width: 600px) {
+  .claim {
+    margin: 50px 0 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .claim .claimText {
+    width: fit-content;
+    padding-top: 30px;
+  }
+  .claim .claimText p {
+    padding-top: 20px;
+  }
+  .claim .clamBox {
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid #e62058;
+  }
+  .claim .clamBox .ctiop {
+    padding: 30px 40px;
+  }
+  .claim .clamBox .ctiop .cons {
+    font-size: 1.8rem;
+    padding-bottom: 30px;
+  }
+  .claim .clamBox .ctiop .biCl {
+    margin-bottom: 30px;
+  }
+  .claim .clamBox .ctiop .biCl h2 {
+    font-weight: 800;
+    font-size: 3rem;
+  }
+  .claim .clamBox .ctiop .biCl .kf,
+  .claim .clamBox .ctiop .biCl .ttCLI {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    font-weight: 700;
+  }
+  .claim .clamBox .actionCli {
+    border-top: 1px solid #e62056;
+    padding: 30px 40px;
+  }
+  .claim .clamBox .actionCli button {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+  }
+  .extra {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    row-gap: 30px;
+    margin: 80px 0 100px;
+  }
+  .extra .exText {
+    width: 100%;
+  }
+  .extra .exText p {
+    padding-top: 20px;
+  }
+  .extra .x h1 {
+    font-size: 3rem;
+  }
+  nav .navAct button:nth-child(2) {
+    display: none;
+  }
+  .actionSce {
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    position: relative;
+  }
+  .actionSce .linkBox {
+    padding: 30px;
+    height: 420px;
+    width: 320px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.084);
+    margin-bottom: 10vh;
+    overflow: hidden;
+  }
+  .actionSce .linkBox .iconLink {
+    margin: auto auto 20px;
+    height: 80px;
+    width: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .actionSce .linkBox .textLinks {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .actionSce .linkBox .textLinks h2 {
+    font-size: 1.6rem;
+  }
+  .actionSce .linkBox .linklistBox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+    padding-bottom: 50px;
+  }
+  .actionSce .linkBox .linklistBox .linkSingle {
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .actionSce .linkBox .linklistBox .linkSingle .cctIcon {
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .actionSce .linkBox .linklistBox .linkSingle p {
+    font-size: 1.1rem;
+  }
+  .actionSce .linkBox .linklistBox::-webkit-scrollbar {
+    display: none;
+  }
+  .actionSce .shacj {
+    height: fit-content;
+  }
+  section,
+  nav,
+  footer {
+    padding: 0 30px;
+    width: 100vw;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  h3,
+  p {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  button {
+    padding: 15px 20px;
+    border-radius: 100px;
+    border: none;
+    background: #e62056;
+    color: #fff;
+    cursor: pointer;
+  }
+  .logo {
+    height: 28px;
+    width: fit-content;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .hero {
+    padding: 15vh 30px 0;
+    text-align: center;
+  }
+  .hero .heroInfo h1 {
+    width: fit-content;
+    font-size: 3.5rem;
+  }
+  .hero .heroInfo p {
+    width: fit-content;
+  }
+  .hero .sectionAction {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  .info {
+    margin-top: 10vh;
+  }
+  .info .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10vh;
+    gap: 60px;
+  }
+  .info .cards .cBox {
+    width: fit-content;
+  }
+  .workingWitUs {
+    text-align: center;
+  }
+  .workingWitUs .secBoxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+    width: 100%;
+  }
+  .workingWitUs .secBoxes .bBox {
+    height: 60px;
+    flex: 1;
+    background: red;
+  }
+  .subHero .subHeroWrap h2 {
+    width: fit-content;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  .services {
+    margin-top: 30px;
+  }
+  .services .secTopServ {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .services .secTopServ h2 {
+    width: 500px;
+  }
+  .services .secCardsServ {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+  }
+  .services .secCardsServ .serCard {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 30px;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background: #000;
+    color: #fff;
+  }
+  .services .secCardsServ .serCard .iconSer {
+    height: 100px;
+    width: 100px;
+  }
+  footer {
+    margin-top: 20vh;
+    padding-top: 8vh;
+    padding-bottom: 4vh;
+    background: #000;
+    color: #fff;
+  }
+  footer .footext {
+    font-size: 2rem;
+    width: fit-content;
+  }
+  footer .fooLogo {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer .fooLogo .fLogo {
+    height: 30px;
+    width: 100px;
+  }
+  footer hr {
+    margin: 20px 0;
+    border: 0.1px solid rgba(255, 255, 255, 0.247);
+  }
+  footer .fooLogob {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+    align-items: baseline;
+  }
+  footer .fooLogob .socials {
+    display: flex;
+    gap: 10px;
+  }
+  footer .fooLogob .socials .socBox {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+}
