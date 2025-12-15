@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-h&9%4o!26ysndmpzvhi%46i-o@7)5el_yb#md^#^)g7gw0xdpu
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'flarerippletokenchain.network',
-    'www.flarerippletokenchain.network',
+    'blockchainresolver.com',
     'localhost',
+    '49a0710263aa.ngrok-free.app'
 ]
 
 
