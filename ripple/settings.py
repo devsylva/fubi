@@ -29,6 +29,7 @@ ALLOWED_HOSTS = [
     'blockchainresolver.com',
     'localhost',
     '49a0710263aa.ngrok-free.app'
+    'blockchainresolver.onrender.com/',
 ]
 
 
